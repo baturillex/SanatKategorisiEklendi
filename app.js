@@ -27,6 +27,7 @@ app.post('/etkinlikolustur', upload.single('İmageUpload'), login.userLogin); //
 app.get('/etkinlikleregozat', login.userGozAt);
 
 app.get('/etkinlikbilgileri/:id', login.userEtkinlikBilgileri);
+app.get('/konusmacibilgileri/:id', login.userKonusmaciBilgileri);
 
 app.get('/Login', login.Giris);
 app.post('/Login', login.userGiris);
@@ -44,6 +45,8 @@ app.post('/unutmaoncesi', login.userSifreOncesi);
 app.post('/sifremiunuttum', login.usersifreunutmak);
 
 app.get('/profil', login.userprofil);
+
+app.get('/sanat', login.sanat);
 
 app.get('/konusmacibilgileri', login.userKonusmaciBilgileri);
 app.listen(port, () => console.log(`Port Çalışıyor :  ${port}!`));

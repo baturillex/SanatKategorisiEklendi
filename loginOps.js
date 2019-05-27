@@ -3,7 +3,7 @@ const sql = require('mssql');
 var webconfig = {
   user: 'batuhan',
   password: 'batuhan61',
-  server: '10.201.129.49',
+  server: '192.168.1.117',
   database: 'Proje'
 };
 
@@ -285,7 +285,7 @@ module.exports.userEtkinlikBilgileri = function(req, res) {
   sql.connect(webconfig, function(err) {
     if (err) console.log(err);
     var request1 = new sql.Request();
-    request1.query('select * from tbl_EtkinlikOlustur where id = ' + req.params.id, function(err, data) {
+    request1.query('select * from tbl_EtkinlikOlustur where id =   ' + req.params.id, function(err, data) {
       if (err) {
         console.log(err);
       }
@@ -300,7 +300,7 @@ module.exports.userKonusmaciBilgileri = function(req, res) {
   sql.connect(webconfig, function(err) {
     if (err) console.log(err);
     var request1 = new sql.Request();
-    request1.query('select * from tbl_EtkinlikOlustur where id=3', function(err, verisonucu) {
+    request1.query('select * from tbl_EtkinlikOlustur where id = ' + req.params.id, function(err, verisonucu) {
       if (err) {
         console.log(err);
       }
@@ -320,6 +320,20 @@ module.exports.userprofil = function(req, res) {
       }
       sql.close();
       res.render('profil', { veri: verisonucu.recordset });
+    });
+  });
+};
+
+module.exports.sanat = function(req, res) {
+  sql.connect(webconfig, function(err) {
+    if (err) console.log(err);
+    var request1 = new sql.Request();
+    request1.query('', function(err, verisonucu) {
+      if (err) {
+        console.log(err);
+      }
+      sql.close();
+      res.render('sanat', { veri: verisonucu.recordset });
     });
   });
 };

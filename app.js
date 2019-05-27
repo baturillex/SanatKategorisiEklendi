@@ -1,8 +1,8 @@
 const express = require('express');
 //const ejs = require('ejs');
 var multer = require('multer');
-var storage = multer.memoryStorage(); // resim yüklemek için eklendi.
-var upload = multer({ storage: storage }); // resim yüklemek için eklendi.
+var storage = multer.memoryStorage(); // resim yüklemek için eklendi. bunlar varmı
+var upload = multer({ storage: storage }); // resim yüklemek için eklendi. var
 const bp = require('body-parser');
 const path = require('path');
 const app = express();
@@ -23,7 +23,6 @@ app.get('/etkinlikolustur', function(req, res) {
 app.post('/guncelle', login.Guncelle);
 
 app.post('/etkinlikolustur', upload.single('İmageUpload'), login.userLogin); // upload single resim için.
-
 app.get('/etkinlikleregozat', login.userGozAt);
 
 app.get('/etkinlikbilgileri/:id', login.userEtkinlikBilgileri);
@@ -46,7 +45,7 @@ app.post('/sifremiunuttum', login.usersifreunutmak);
 
 app.get('/profil', login.userprofil);
 
-app.get('/sanat/:EtkinlikTipi', login.sanat);
+app.get('/sanat', login.sanat);
 
 app.get('/konusmacibilgileri', login.userKonusmaciBilgileri);
 app.listen(port, () => console.log(`Port Çalışıyor :  ${port}!`));

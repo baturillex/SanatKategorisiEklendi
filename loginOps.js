@@ -329,7 +329,7 @@ module.exports.sanat = function(req, res) {
   sql.connect(webconfig, function(err) {
     if (err) console.log(err);
     var request1 = new sql.Request();
-    request1.query('select * from tbl_EtkinlikOlustur where EtkinlikTipi = ' + req.params.EtkinlikTipi, function(err, verisonucu) {
+    request1.query("select * from tbl_EtkinlikOlustur where EtkinlikTipi = 'Kitap' ", function(err, verisonucu) {
       if (err) {
         console.log(err);
       }

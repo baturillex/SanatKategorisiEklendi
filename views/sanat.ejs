@@ -116,7 +116,6 @@ Mobil fotoğraf düzenleme uygulamalarıyla masaüstü uygulamaları arasındaki
 	</div>
   <div class="space"></div>    
 </div>  
-  
   <div class="rehber-card">
 		<div class="rehberheader-img" style="background: url(https://fotografium.com/media/rehber/mobil/iceriks/mobil-fotografcilik-ekipmanlari.png)">
 			<a id="" href="#">
@@ -177,4 +176,30 @@ Mobil fotoğraf düzenleme uygulamalarıyla masaüstü uygulamaları arasındaki
   
 
 </div>
+<% veri.forEach(function(İmgAc){ %>
+
+  <div class="card-wrapper col-lg-4 col-md-6 col-xs-12">
+    <div class="card">
+        <div class="card-img-wrapper">
+            <img class="card-img-top" src="data:image/jpg;base64,<%= İmgAc.ResimYukle %>" alt="Card image cap">
+            <!-- RESİMDE VERİTABNINDAN GELİCEK-->
+
+        </div>
+        <div class="card-body">
+            <h5 class="card-title"><%= İmgAc.EtkinlikAdi %></h5>
+            <div class="card-content">
+                <p class="card-text">
+                    <!-- BURAYA VERİTABANINDAN AÇIKLAMA GELCEK--><%= İmgAc.AciklamaBir %>
+                </p>
+
+                
+            </div>
+        </div>
+        
+
+    </div><br><br>
+
+</div>
+<% }); %>
+
 </body>

@@ -17,7 +17,7 @@ module.exports.userGuncelle = function(req, res) {
       }
       console.log(verisonucu.recordsets);
       sql.close();
-      res.render('home', { veri: verisonucu.recordsets });
+      res.render('Anasayfa', { veri: verisonucu.recordsets });
     });
   });
 };
@@ -325,10 +325,11 @@ module.exports.userprofil = function(req, res) {
 };
 
 module.exports.sanat = function(req, res) {
+  // Sanat kategorisi
   sql.connect(webconfig, function(err) {
     if (err) console.log(err);
     var request1 = new sql.Request();
-    request1.query('', function(err, verisonucu) {
+    request1.query('select * from tbl_EtkinlikOlustur where EtkinlikTipi = ' + req.params.EtkinlikTipi, function(err, verisonucu) {
       if (err) {
         console.log(err);
       }

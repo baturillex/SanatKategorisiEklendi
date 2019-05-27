@@ -46,7 +46,7 @@ app.post('/sifremiunuttum', login.usersifreunutmak);
 
 app.get('/profil', login.userprofil);
 
-app.get('/sanat', login.sanat);
+app.get('/sanat/:EtkinlikTipi', login.sanat);
 
 app.get('/konusmacibilgileri', login.userKonusmaciBilgileri);
 app.listen(port, () => console.log(`Port Çalışıyor :  ${port}!`));
